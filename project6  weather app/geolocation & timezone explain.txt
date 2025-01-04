@@ -1,0 +1,71 @@
+from geopy.geocoders import Nominatim 
+
+Nominatim is a geolocation service (part of the geopy library) that allows converting:
+	1.An address to coordinates (latitude and longitude) using geocode().
+	2.Coordinates back to an address using reverse()
+
+create object => var_name = Nominatim(user_agent="any_name")
+	user_agent => predefied parameter to connect with Nominatim for security reason ,  without it, the Nominatim does not allow to access with geolocation functions
+
+__________________________________________________________________________________________________________________________________________________________________________________
+
+To find the city's location on the map and generate lati,longi,address
+
+location = var_name.geocode("New York City")
+
+* after Nominatim allow geolocator object to access with geolocation functions
+* geolocator called geocode function
+* The geocode() function takes (user_input which is a place name or address )and tries to find its location on the map.
+
+What’s in location?
+* location will store details like latitude and longitude as well as the address.
+* You can access these with location.latitude, location.longitude, and location.address.
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+TimezoneFinder()
+obj = TimezoneFinder()
+	* Creates the object obj that has methods to find the time zone (region). "Not date and time"
+obj.timezone_at(lng=longitude, lat=latitude)
+	*Uses the timezone_at() method of TimezoneFinder to find the time zone for the coordinates you provide (in this case, New York City’s latitude and longitude).
+The result will be something like "America/New_York".
+
+__________________________________________________________________________________________________________________________________________________________________________________
+
+from geopy.geocoders import Nominatim
+
+# Create the geolocator object with a user agent
+geolocator = Nominatim(user_agent="myUniqueAppName")
+
+# Get location information for "New York City"
+location = geolocator.geocode("New York City")
+
+# If location is found, print details
+if location:
+    print("Address:", location.address)
+    print("Latitude:", location.latitude)
+    print("Longitude:", location.longitude)
+else:
+    print("Location not found")
+
+***************************************************************************************************************************************************************************
+
+from timezonefinder import TimezoneFinder
+
+# Create an object of the TimezoneFinder class
+obj = TimezoneFinder()
+
+# Example coordinates for New York City
+latitude = 40.7128
+longitude = -74.0060
+
+# Use the object's method to find the timezone
+result = obj.timezone_at(lng=longitude, lat=latitude)
+
+# Print the result region
+print("The timezone for the given coordinates is:", result)
+
+
+
+
+

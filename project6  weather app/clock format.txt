@@ -1,0 +1,41 @@
+local current time  => 2024-11-11 16:40:22.052136+00:00
+
+12-hour clock format (like "02:35 PM")
+	*strftime("%I:%M %p")	
+	*strftime() 		=> string format time()
+	*"%I:%M %p"		=> %I: Displays the hour in a 12-hour format (01 to 12).
+				   %M: Displays the minutes (00 to 59).
+				   %p: Displays the AM/PM indicator.
+
+24-Hour Clock Format (like "00 to 23")
+	*strftime("%H:%M")	
+	*strftime() 		=> string format time()
+	*"%I:%M "		=> %H: Displays the hour in a 24-hour format (00 to 23).
+				   %M: Displays the minutes (00 to 59).
+__________________________________________________________________________________________________________________
+
+
+clock_12_hour = current_time_in_home.strftime("%I:%M %p")
+clock_24_hour = current_time_in_home.strftime("%H:%M")
+full_date_time = current_time_in_home.strftime("%Y-%m-%d %H:%M:%S")
+date_us_format = current_time_in_home.strftime("%m/%d/%Y")
+date_eu_format = current_time_in_home.strftime("%d-%m-%Y")
+friendly_date = current_time_in_home.strftime("%A, %B %d, %Y")
+short_date_time = current_time_in_home.strftime("%a, %b %d %I:%M %p")
+
+result
+12-hour format: 11:49 AM
+24-hour format: 11:49
+Full date and time: 2024-11-11 11:49:06
+US date format: 11/11/2024
+EU date format: 11-11-2024
+Friendly date format: Monday, November 11, 2024
+Shortened date and time: Mon, Nov 11 11:49 AM
+
+
+
+				   
+
+
+
+	
